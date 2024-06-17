@@ -1,9 +1,7 @@
 export enum CollectionNames {
-  Reward = "Order",
+  Account = "Account",
   Config = "Config",
-  Offer = "Offer",
   Lock = "Lock",
-  Token = "Token",
 }
 
 enum KYCLevel {
@@ -84,31 +82,9 @@ export type PaymentDetails = {
   currency: string; // symbol of currency that merchant can settle, only one currency for now
 };
 
-export type Appeal = {
-  orderid: number; // id of offer being appealed
-  reason: string; // short explanation of why
-  votes: AppealVote[];
-  appealer: string; // address of the apealing party
-};
-
-export enum AppealDecision {
-  release,
-  cancel,
-  unvoted,
-}
-
-export type AppealVote = {
-  settler: string;
-  settlerVote: AppealDecision; //
-  settled: boolean;
-  merchantVote: AppealDecision;
-  traderVote: AppealDecision;
-};
-
 export type AppConfig = {
   offerFee: string; // fee charged for creating an offer
   contractAddress: string; // p2p contract address
   paymentMethods: string[]; // list of supported payment methods
-  tradeTokens: { address: string; symbol: string }[]; // list of supported trade tokens
   currencies: string[]; // list of supported currencies
 };

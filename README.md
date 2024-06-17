@@ -9,7 +9,7 @@ It facilitates storing bulk of the date off-chain.
 baseUrl=
 ```
 
-[Postman collection](DexRamp.postman_collection.json)
+[Postman collection](iexchange.postman_collection.json)
 
 ### GET /config
 - Returns config of the application
