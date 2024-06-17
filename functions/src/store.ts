@@ -1,6 +1,5 @@
 import { store } from "./firebase";
 import { Config } from "./config";
-import { AppConfig } from "../commons/types";
 
 export class LockStore {
     static async lock(lockId: string): Promise<boolean> {
@@ -29,13 +28,6 @@ export class LockStore {
     }
 }
 
-export class ConfigStore {
-    static async config(): Promise<AppConfig | undefined> {
-        try {            
-            return ((await store.Config.doc(Config.appConfig).get()).data() as any) as AppConfig;
-        } catch (error) {
-            console.log(error);
-            return undefined;
-        }
-    }
+export class AccountStore {
+    
 }

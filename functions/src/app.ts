@@ -1,6 +1,6 @@
 import * as express from "express";
 import {rateLimit} from "express-rate-limit";
-import { appeal, appeals, config, createAppeal, createOffer, createOrder, offer, offers, order, orders } from "./controllers";
+import { storeAccountDetails } from "./controllers";
 import * as cors from "cors";
 import { AppErrors } from "./error";
 
@@ -29,16 +29,7 @@ app.use(async (req, res, next) => {
   }
 });
 
-app.get("", (_req, res) => res.send("DexRamp Systems Online"));
-app.get("/config", config);
-app.get("/offers", offers);
-app.get("/offers/:offerId", offer);
-app.get("/orders", orders);
-app.get("/orders/:orderId", order);
-app.get("/appeals", appeals);
-app.get("/appeals/:appealId", appeal);
-app.post("/order", createOrder);
-app.post("/offer", createOffer);
-app.post("/appeal", createAppeal);
+app.get("", (_req, res) => res.send("iExchange Systems Online"));
+app.post("/account", storeAccountDetails);
 
 export default app;
