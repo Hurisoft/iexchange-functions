@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "4fd9a486-00f7-4ef1-afa8-706b4c0ace8b",
+		"name": "iExchange",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11212509"
+	},
+	"item": [
+		{
+			"name": "Store Account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Dakuuda\",\n    \"number\": \"0243337989\",\n    \"address\": \"0x8DB769ccD2f5946a94fCe8b3Ad9a296D5309c36c\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/account",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Address Accounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/account/:address",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"account",
+						":address"
+					],
+					"variable": [
+						{
+							"key": "address",
+							"value": "0x8DB769ccD2f5946a94fCe8b3Ad9a296D5309c36c"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hash Account",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/account/hash/:hash",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"account",
+						"hash",
+						":hash"
+					],
+					"variable": [
+						{
+							"key": "hash",
+							"value": "0x44616b7575646130323433333337393839000000000000000000000000000000"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://us-central1-iexchange-finance.cloudfunctions.net/api",
+			"type": "string"
+		}
+	]
+}

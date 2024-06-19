@@ -38,7 +38,7 @@ export class AccountStore {
     );
     account.address = account.address.toLocaleLowerCase();
     console.log(account);
-    
+
     await store.Account.doc(accountHash).set(account);
     return accountHash;
   }
@@ -49,7 +49,9 @@ export class AccountStore {
       "==",
       address.toLocaleLowerCase()
     ).get();
-    return accounts.docs.map((a) => a.data() as AccountDetails);
+    return accounts.docs.map(
+      (a) => ({ ...a.data(), hash: a.id } as AccountDetails)
+    );
   }
 
   static async getHashAccount(hash: string): Promise<AccountDetails> {

@@ -8,4 +8,5 @@ export type AccountDetails = {
   name: string;
   number: string;
   address: string;
+  hash?: string;
 }

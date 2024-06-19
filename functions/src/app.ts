@@ -32,6 +32,6 @@ app.use(cors());
 app.get("", (_req, res) => res.send("iExchange Systems Online"));
 app.post("/account", storeAccountDetails);
 app.get("/account/:address", getAddressAccounts);
-app.get("/account/:hash", getHashAccount);
+app.get("/account/hash/:hash", getHashAccount);
 
 export default app;
