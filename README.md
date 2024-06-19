@@ -6,5 +6,5 @@ It facilitates storing bulk of the date off-chain.
 ## APIs
 
 ```env
-baseUrl=
+baseUrl=https://us-central1-iexchange-finance.cloudfunctions.net/api
 ```

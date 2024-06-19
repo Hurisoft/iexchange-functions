@@ -5,6 +5,7 @@ export enum CollectionNames {
 }
 
 export type AccountDetails = {
-  accountName: string;
-  accountNumber: string;
+  name: string;
+  number: string;
+  address: string;
 }
