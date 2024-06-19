@@ -33,9 +33,9 @@ export class LockStore {
 
 export class AccountStore {
   static async storeAccount(account: AccountDetails): Promise<string> {
-    const accountHash = ethers.encodeBytes32String(
+    const accountHash = ethers.keccak256(ethers.encodeBytes32String(
       account.name + account.number
-    );
+    ));
     account.address = account.address.toLocaleLowerCase();
     console.log(account);
 
